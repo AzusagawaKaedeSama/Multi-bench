@@ -1,0 +1,4 @@
+interface:
+  display_name: "创作文件定位与归档"
+  short_description: "按素材与作品用途查找原件、核对最新版本、归档到正式位置并登记审阅台"
+  default_prompt: "使用 $creative-file-routing 查找本次输入的真实素材与完成回执，选择已有项目或素材库，执行当前任务并登记审阅入口和绝对路径。"

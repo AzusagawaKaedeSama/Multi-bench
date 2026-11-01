@@ -1,0 +1,28 @@
+{
+  "author": "Codex (GPT-6), 2026-10-28",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Unified agent task envelope v1",
+  "type": "object",
+  "required": ["schema", "adapter", "external_id", "event_id", "sequence", "state"],
+  "properties": {
+    "schema": {"const": "workbench.task.v1"},
+    "adapter": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{0,63}$"},
+    "external_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "event_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "task_id": {"type": "string", "description": "Stable work order ID for cross-client continuation"},
+    "session_id": {"type": "string", "maxLength": 200},
+    "description": {"type": "string", "maxLength": 8000},
+    "title": {"type": "string", "maxLength": 180},
+    "agent": {"type": "string", "maxLength": 100},
+    "state": {"enum": ["registered", "queued", "running", "waiting_resources", "needs_attention", "paused", "review", "cancelled"]},
+    "heartbeat_at": {"type": "string", "format": "date-time"},
+    "deadline_at": {"type": ["string", "null"], "format": "date-time"},
+    "detail": {"type": "string", "maxLength": 3000},
+    "progress": {"type": "object"},
+    "evidence": {"type": "array", "maxItems": 30},
+    "ack_command_id": {"type": "string"},
+    "capabilities": {"type": "array", "items": {"enum": ["observe", "message", "pause", "resume", "cancel", "ack"]}}
+  },
+  "additionalProperties": false
+}

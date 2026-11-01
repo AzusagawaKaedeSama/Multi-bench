@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>作品审片台</title>
+<style>
+:root{--bg:#f6f5f2;--fg:#1d1d1f;--dim:#77736b;--line:#dedad2;--card:#fff;
+  --keep:#1f8a4c;--meh:#c98a1f;--no:#c2412d;--acc:#2d5bc2;
+  --sans:"Segoe UI Variable Display","Segoe UI",-apple-system,"Helvetica Neue",Arial,"HarmonyOS Sans SC","PingFang SC","Microsoft YaHei UI","Microsoft YaHei",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--fg:#ecebe8;--dim:#9a968e;--line:#33322f;--card:#232326;--acc:#6f9bff}}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 var(--sans);background:var(--bg);color:var(--fg)}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  padding:12px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.top b{font-size:15px}
+.stat{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
+.stat b{font-size:14px;color:var(--fg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);
+  font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--dim)}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.spacer{flex:1}
+.btn{padding:6px 14px;border-radius:6px;border:1px solid var(--line);background:var(--card);
+  color:var(--fg);cursor:pointer;font-size:13px;font-family:inherit}
+.btn:hover{border-color:var(--acc)}
+.btn.primary{background:var(--acc);color:#fff;border-color:var(--acc)}
+
+.grid{columns:5;column-gap:14px;padding:16px 20px 60px}
+@media(max-width:1600px){.grid{columns:4}}
+@media(max-width:1200px){.grid{columns:3}}
+@media(max-width:820px){.grid{columns:2}}
+@media(max-width:520px){.grid{columns:1}}
+.cell{break-inside:avoid;margin:0 0 14px;background:var(--card);border:2px solid transparent;
+  border-radius:10px;overflow:hidden;position:relative;transition:.18s}
+.cell:hover{border-color:var(--line)}
+.cell.keep{border-color:var(--keep)}
+.cell.meh{border-color:var(--meh)}
+.cell.no{border-color:var(--no);opacity:.5}
+.cell img{display:block;width:100%;background:#eee}
+.meta{padding:8px 10px;display:flex;gap:8px;align-items:center;font-size:12px}
+.meta .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.meta .cat{color:var(--dim);font-size:11px;white-space:nowrap}
+.acts{display:flex;border-top:1px solid var(--line)}
+.acts button{flex:1;padding:7px 0;border:0;background:transparent;cursor:pointer;font-size:12px;
+  font-family:inherit;color:var(--dim);border-right:1px solid var(--line)}
+.acts button:last-child{border-right:0}
+.acts button:hover{background:var(--bg)}
+.acts button.keep.on{background:var(--keep);color:#fff}
+.acts button.meh.on{background:var(--meh);color:#fff}
+.acts button.no.on{background:var(--no);color:#fff}
+.tag{position:absolute;top:8px;left:8px;font-size:11px;font-weight:700;padding:2px 8px;
+  border-radius:999px;background:rgba(0,0,0,.62);color:#fff;backdrop-filter:blur(4px)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);
+  background:var(--fg);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:13px;
+  font-weight:600;opacity:0;transition:.22s;pointer-events:none;z-index:99}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+</style></head><body>
+
+<div class="top">
+  <b>作品审片台</b>
+  <div class="chips" id="kinds"></div>
+  <div class="chips" id="cats"></div>
+  <div class="spacer"></div>
+  <div class="stat">保留 <b id="nKeep">0</b> · 一般 <b id="nMeh">0</b> · 不要 <b id="nNo">0</b> · 共 <b id="nAll">0</b></div>
+  <button class="btn" id="bExport">导出结果</button>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var ITEMS = [], RES = { 判定: {} }, fKind = '全部', fCat = '全部';
+function $(id){ return document.getElementById(id); }
+function toast(m){ var t=$('toast'); t.textContent=m; t.classList.add('on'); setTimeout(function(){t.classList.remove('on');},1300); }
+
+function load(){
+  fetch('/api/items').then(function(r){return r.json();}).then(function(x){
+    ITEMS = x; return fetch('/api/result');
+  }).then(function(r){return r.json();}).then(function(y){
+    RES = y; if(!RES.判定) RES.判定 = {};
+    render();
+  });
+}
+
+function render(){
+  // 过滤按钮
+  var kinds = ['全部'].concat(ITEMS.map(function(i){return i.kind;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
+  $('kinds').innerHTML = '';
+  kinds.forEach(function(k){
+    var b = document.createElement('button');
+    b.className = 'chip' + (fKind===k?' on':''); b.textContent = k;
+    b.onclick = function(){ fKind=k; render(); };
+    $('kinds').appendChild(b);
+  });
+  var cats = ['全部'].concat(ITEMS.map(function(i){return i.cat;}).filter(function(v,i,a){return a.indexOf(v)===i;}));
+  $('cats').innerHTML = '';
+  cats.forEach(function(c){
+    var b = document.createElement('button');
+    b.className = 'chip' + (fCat===c?' on':''); b.textContent = c;
+    b.onclick = function(){ fCat=c; render(); };
+    $('cats').appendChild(b);
+  });
+
+  var list = ITEMS.filter(function(i){
+    return (fKind==='全部'||i.kind===fKind) && (fCat==='全部'||i.cat===fCat);
+  });
+
+  var g = $('grid'); g.innerHTML = '';
+  var nk=0, nm=0, nn=0;
+  list.forEach(function(it){
+    var mark = RES.判定[it.id];
+    if(mark==='keep') nk++; else if(mark==='meh') nm++; else if(mark==='no') nn++;
+    var c = document.createElement('figure');
+    c.className = 'cell' + (mark?' '+mark:'');
+    c.innerHTML =
+      '<div class="tag">'+it.kind+'</div>' +
+      '<img loading="lazy" src="/img?p='+encodeURIComponent(it.file)+'" alt="">' +
+      '<figcaption class="meta"><span class="nm" title="'+it.title+'">'+it.title+'</span>' +
+      '<span class="cat">'+it.cat+'</span></figcaption>' +
+      '<div class="acts">' +
+        '<button class="keep'+(mark==='keep'?' on':'')+'">保留</button>' +
+        '<button class="meh'+(mark==='meh'?' on':'')+'">一般</button>' +
+        '<button class="no'+(mark==='no'?' on':'')+'">不要</button>' +
+      '</div>';
+    var bs = c.querySelectorAll('.acts button');
+    bs[0].onclick = function(){ mark_(it.id,'keep'); };
+    bs[1].onclick = function(){ mark_(it.id,'meh'); };
+    bs[2].onclick = function(){ mark_(it.id,'no'); };
+    g.appendChild(c);
+  });
+  $('nKeep').textContent = nk; $('nMeh').textContent = nm;
+  $('nNo').textContent = nn; $('nAll').textContent = list.length;
+}
+
+function mark_(id, v){
+  var cur = RES.判定[id];
+  var body;
+  if (cur === v) { body = { clear: id }; delete RES.判定[id]; }
+  else { body = { marks: {} }; body.marks[id] = v; RES.判定[id] = v; }
+  render();
+  fetch('/api/mark', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body) })
+    .then(function(r){return r.json();}).then(function(x){
+      toast((cur===v?'已取消':'已标记') + ' · 共 ' + x.count + ' 项');
+    });
+}
+
+$('bExport').onclick = function(){
+  var keep = [], meh = [], no = [];
+  ITEMS.forEach(function(it){
+    var m = RES.判定[it.id]; if(!m) return;
+    var line = it.kind + ' · ' + it.cat + ' · ' + it.title;
+    if(m==='keep') keep.push(line); else if(m==='meh') meh.push(line); else no.push(line);
+  });
+  var txt = '【保留】' + keep.length + '\n' + keep.join('\n') +
+            '\n\n【一般】' + meh.length + '\n' + meh.join('\n') +
+            '\n\n【不要】' + no.length + '\n' + no.join('\n');
+  navigator.clipboard.writeText(txt).then(function(){ toast('结果已复制到剪贴板'); })
+    .catch(function(){ toast('复制失败'); });
+};
+
+load();
+</script></body></html>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>false</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <RootNamespace>WorkbenchShell</RootNamespace>
+    <AssemblyName>WorkbenchShell</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- 应用图标编进 exe：托盘、任务栏、桌面快捷方式都从这里取，
+         不依赖 ReviewHub 目录是否还在（外置部署时目录可能被挪走）。 -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <!-- 作者：WorkBuddy（智能设计助手）· 2026-10-31 -->
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 作者：WorkBuddy（智能设计助手）· 2026-10-31。
+         SDK 版本必须与本机 WebView2 Runtime（156.0.4314.50）匹配，
+         旧版 SDK（1.0.2903.x）与新 Runtime 组合会报 E_NOINTERFACE。 -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
+  </ItemGroup>
+  <!-- 原生桥接脚本：编译进 exe，运行时注入页面，页面与壳共用同一份实现。 -->
+  <ItemGroup>
+    <EmbeddedResource Include="bridge.js" LogicalName="WorkbenchShell.bridge.js" />
+  </ItemGroup>
+</Project>

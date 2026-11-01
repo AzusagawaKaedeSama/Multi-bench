@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "author": "Codex GPT-6",
+  "installed_at": "2026-10-27T00:47:16+0800",
+  "source": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+  "source_skill_sha256_before": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+  "entrypoint_inventory": "E:\\AgentData\\Work\\creative-file-routing-20261027\\client-entrypoints.json",
+  "backup_folder": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1",
+  "clients": [
+    {
+      "client": "Codex desktop / local CLI",
+      "entry": "C:\\Users\\10939\\.codex\\skills\\creative-file-routing",
+      "status": "installed_junction",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "is_junction": true,
+      "is_reparse_point": true,
+      "skill_path": "C:\\Users\\10939\\.codex\\skills\\creative-file-routing\\SKILL.md",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true
+    },
+    {
+      "client": "Claude Code",
+      "entry": "C:\\Users\\10939\\.claude\\skills\\creative-file-routing",
+      "status": "installed_junction",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "is_junction": true,
+      "is_reparse_point": true,
+      "skill_path": "C:\\Users\\10939\\.claude\\skills\\creative-file-routing\\SKILL.md",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true
+    },
+    {
+      "client": "DSH host",
+      "entry": "C:\\Users\\10939\\.dsh\\skills\\creative-file-routing",
+      "status": "installed_junction",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "is_junction": true,
+      "is_reparse_point": true,
+      "skill_path": "C:\\Users\\10939\\.dsh\\skills\\creative-file-routing\\SKILL.md",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true
+    },
+    {
+      "client": "DSH EAC isolated eac-beta",
+      "entry": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\skills\\creative-file-routing",
+      "status": "installed_junction",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "is_junction": true,
+      "is_reparse_point": true,
+      "skill_path": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\skills\\creative-file-routing\\SKILL.md",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true
+    },
+    {
+      "client": "Hermes DSH execution CLI",
+      "entry": "E:\\Hermes\\tools\\dsh-home\\skills\\creative-file-routing",
+      "status": "installed_junction",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "is_junction": true,
+      "is_reparse_point": true,
+      "skill_path": "E:\\Hermes\\tools\\dsh-home\\skills\\creative-file-routing\\SKILL.md",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true
+    },
+    {
+      "client": "Hermes main",
+      "status": "existing_external_root",
+      "entry": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true,
+      "new_package_copy": false
+    },
+    {
+      "client": "Hermes doloris",
+      "status": "existing_external_root",
+      "entry": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true,
+      "new_package_copy": false
+    },
+    {
+      "client": "Hermes misumi",
+      "status": "existing_external_root",
+      "entry": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true,
+      "new_package_copy": false
+    },
+    {
+      "client": "Hermes qq-deepseek",
+      "status": "existing_external_root",
+      "entry": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true,
+      "new_package_copy": false
+    },
+    {
+      "client": "Hermes uika",
+      "status": "existing_external_root",
+      "entry": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "real_target": "E:\\Hermes\\shared\\skills\\creative-file-routing",
+      "skill_sha256": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+      "readback_verified": true,
+      "new_package_copy": false
+    },
+    {
+      "client": "Plain ChatGPT desktop / web without a local agent connector",
+      "status": "requires_local_agent_handoff",
+      "local_tools_available": false,
+      "automatic_skill_registration": false,
+      "handoff": "普通ChatGPT缺少本机文件工具时，把任务、输入文件绝对路径和本技能路径交给已接入的Codex、DSH、Claude或Hermes执行。"
+    }
+  ],
+  "instruction_files": [
+    {
+      "path": "C:\\Users\\10939\\.codex\\AGENTS.md",
+      "aliases": [
+        "C:\\Users\\10939\\.codex\\AGENTS.md"
+      ],
+      "clients": [
+        "Codex desktop / local CLI"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\6c5463de6ae9-AGENTS.md.f318f68e49.bak",
+      "before_sha256": "f318f68e49a15e88e4a65d96d025f37e34c4a23551ab62d403be2d722d39455f",
+      "after_sha256": "20f707f883809868a82268972b709ddcd03576a5cbc0a64de56d3a2916b28cab",
+      "original_bytes_preserved": 16772,
+      "appended_bytes": 572,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "C:\\Users\\10939\\.codex\\AGENTS.md",
+          "real_target": "C:\\Users\\10939\\.codex\\AGENTS.md",
+          "sha256": "20f707f883809868a82268972b709ddcd03576a5cbc0a64de56d3a2916b28cab",
+          "pointer_present": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\10939\\.claude\\CLAUDE.md",
+      "aliases": [
+        "C:\\Users\\10939\\.claude\\CLAUDE.md"
+      ],
+      "clients": [
+        "Claude Code"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\3361eb4b64f4-CLAUDE.md.f779205292.bak",
+      "before_sha256": "f779205292f573a152156344bebf20f7e8dda31585a1d0c88cbd7a42836f415a",
+      "after_sha256": "fd26ec76d1979fcd896a6fa2c65a64362db5ecf67e995a022cbd1abc68e990c2",
+      "original_bytes_preserved": 15076,
+      "appended_bytes": 572,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "C:\\Users\\10939\\.claude\\CLAUDE.md",
+          "real_target": "C:\\Users\\10939\\.claude\\CLAUDE.md",
+          "sha256": "fd26ec76d1979fcd896a6fa2c65a64362db5ecf67e995a022cbd1abc68e990c2",
+          "pointer_present": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\10939\\.dsh\\AGENTS.md",
+      "aliases": [
+        "C:\\Users\\10939\\.dsh\\AGENTS.md"
+      ],
+      "clients": [
+        "DSH host"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\28da726c945f-AGENTS.md.2cac827132.bak",
+      "before_sha256": "2cac8271322931083083c26e9d5b470109b6bcfb1dbab8fc270157d2fb4909fc",
+      "after_sha256": "52079adce0f4dafcf7d56dbbe87392d81e39c8fd64b807da9d39afd5703293e6",
+      "original_bytes_preserved": 48037,
+      "appended_bytes": 572,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "C:\\Users\\10939\\.dsh\\AGENTS.md",
+          "real_target": "C:\\Users\\10939\\.dsh\\AGENTS.md",
+          "sha256": "52079adce0f4dafcf7d56dbbe87392d81e39c8fd64b807da9d39afd5703293e6",
+          "pointer_present": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\AGENTS.md",
+      "aliases": [
+        "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\AGENTS.md"
+      ],
+      "clients": [
+        "DSH EAC isolated eac-beta"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\99185909ff84-AGENTS.md.51e72c246f.bak",
+      "before_sha256": "51e72c246ff911e3dac52c37dee1bbc957119b1fe8134e91e9e26edda2afecf6",
+      "after_sha256": "7b280eb61cb6798a8b448d231baf8f48d82534a3dd702e74083ad3c11fa3d238",
+      "original_bytes_preserved": 53605,
+      "appended_bytes": 566,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\AGENTS.md",
+          "real_target": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\AGENTS.md",
+          "sha256": "7b280eb61cb6798a8b448d231baf8f48d82534a3dd702e74083ad3c11fa3d238",
+          "pointer_present": true
+        }
+      ]
+    },
+    {
+      "path": "E:\\Hermes\\tools\\dsh-home\\AGENTS.md",
+      "aliases": [
+        "E:\\Hermes\\tools\\dsh-home\\AGENTS.md"
+      ],
+      "clients": [
+        "Hermes DSH execution CLI"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\9c697142a8b9-AGENTS.md.a9b65f1488.bak",
+      "before_sha256": "a9b65f14883541439ebefd6ad5b246c588a577734bacc0505f5be5596b8d90a0",
+      "after_sha256": "106c8e092ddfdc858a3e40350f2511891eef55ab2e55c61a5f6c36051739535e",
+      "original_bytes_preserved": 3184,
+      "appended_bytes": 572,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "E:\\Hermes\\tools\\dsh-home\\AGENTS.md",
+          "real_target": "E:\\Hermes\\tools\\dsh-home\\AGENTS.md",
+          "sha256": "106c8e092ddfdc858a3e40350f2511891eef55ab2e55c61a5f6c36051739535e",
+          "pointer_present": true
+        }
+      ]
+    },
+    {
+      "path": "E:\\Hermes\\SOUL.md",
+      "aliases": [
+        "E:\\Hermes\\SOUL.md",
+        "E:\\Hermes\\profiles\\doloris\\SOUL.md",
+        "E:\\Hermes\\profiles\\misumi\\SOUL.md",
+        "E:\\Hermes\\profiles\\qq-deepseek\\SOUL.md",
+        "E:\\Hermes\\profiles\\uika\\SOUL.md"
+      ],
+      "clients": [
+        "Hermes main",
+        "Hermes doloris",
+        "Hermes misumi",
+        "Hermes qq-deepseek",
+        "Hermes uika"
+      ],
+      "status": "pointer_appended",
+      "backup": "E:\\AgentData\\ReviewHub\\storage-organization\\skill-install-20261027\\run-20261027-004716-7d22e1\\1ad8ed6f6f3c-SOUL.md.ec74da8b3b.bak",
+      "before_sha256": "ec74da8b3b517cb52b590b68db9a05a5726b052b0656bb50e915f579171656d9",
+      "after_sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+      "original_bytes_preserved": 2829,
+      "appended_bytes": 507,
+      "original_preserved": true,
+      "atomic_replace": true,
+      "concurrent_compare": true,
+      "readbacks": [
+        {
+          "path": "E:\\Hermes\\SOUL.md",
+          "real_target": "E:\\Hermes\\SOUL.md",
+          "sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+          "pointer_present": true
+        },
+        {
+          "path": "E:\\Hermes\\profiles\\doloris\\SOUL.md",
+          "real_target": "E:\\Hermes\\SOUL.md",
+          "sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+          "pointer_present": true
+        },
+        {
+          "path": "E:\\Hermes\\profiles\\misumi\\SOUL.md",
+          "real_target": "E:\\Hermes\\SOUL.md",
+          "sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+          "pointer_present": true
+        },
+        {
+          "path": "E:\\Hermes\\profiles\\qq-deepseek\\SOUL.md",
+          "real_target": "E:\\Hermes\\SOUL.md",
+          "sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+          "pointer_present": true
+        },
+        {
+          "path": "E:\\Hermes\\profiles\\uika\\SOUL.md",
+          "real_target": "E:\\Hermes\\SOUL.md",
+          "sha256": "1adbe807644d6fe7c2275660f18a6273ac1ca8777cf7320bdd7636dd345ab03c",
+          "pointer_present": true
+        }
+      ]
+    }
+  ],
+  "conflicts": [],
+  "notes": [
+    {
+      "client": "Shared .agents skill root (Codex and supported DSH)",
+      "status": "optional_root_not_registered",
+      "reason": "Use the requested native package root; no redundant shared-root registration."
+    },
+    {
+      "client": "DSH EAC isolated shared agents root",
+      "status": "optional_root_not_registered",
+      "reason": "Use the requested native package root; no redundant shared-root registration."
+    }
+  ],
+  "source_skill_sha256_after": "f11e7a2798bcfe660f8f644695c04049bc7c9ef3a1e62a260f729e4379c0dc03",
+  "source_unchanged": true,
+  "verification": {
+    "new_junctions": 5,
+    "external_profiles": 5,
+    "unique_instruction_files": 6,
+    "instruction_entrypoints": 10,
+    "live_invocations": "No client model invocation; filesystem package/readback and trigger pointers verified. Running client catalogs may refresh on a subsequent turn or session.",
+    "services_restarted": 0,
+    "native_memory_files_touched": 0,
+    "model_permission_config_changes": 0
+  },
+  "ok": true,
+  "latest_rule_verification": {
+    "verified_at": "2026-10-27T00:52:49.167525+08:00",
+    "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161",
+    "entries": [
+      {
+        "client": "Codex desktop / local CLI",
+        "skill_path": "C:\\Users\\10939\\.codex\\skills\\creative-file-routing\\SKILL.md",
+        "realpath": "E:\\Hermes\\shared\\skills\\creative-file-routing\\SKILL.md",
+        "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161"
+      },
+      {
+        "client": "Claude Code",
+        "skill_path": "C:\\Users\\10939\\.claude\\skills\\creative-file-routing\\SKILL.md",
+        "realpath": "E:\\Hermes\\shared\\skills\\creative-file-routing\\SKILL.md",
+        "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161"
+      },
+      {
+        "client": "DSH host",
+        "skill_path": "C:\\Users\\10939\\.dsh\\skills\\creative-file-routing\\SKILL.md",
+        "realpath": "E:\\Hermes\\shared\\skills\\creative-file-routing\\SKILL.md",
+        "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161"
+      },
+      {
+        "client": "DSH EAC isolated eac-beta",
+        "skill_path": "C:\\Users\\10939\\AppData\\Local\\Deepseek Harness EAC\\dpx\\dsh-environments\\eac-beta\\dsh-home\\skills\\creative-file-routing\\SKILL.md",
+        "realpath": "E:\\Hermes\\shared\\skills\\creative-file-routing\\SKILL.md",
+        "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161"
+      },
+      {
+        "client": "Hermes DSH execution CLI",
+        "skill_path": "E:\\Hermes\\tools\\dsh-home\\skills\\creative-file-routing\\SKILL.md",
+        "realpath": "E:\\Hermes\\shared\\skills\\creative-file-routing\\SKILL.md",
+        "sha256": "f8829afc47da23ff4a7d8b6132f090b9a5afb70eff6e1efe22d224e740aa4161"
+      }
+    ]
+  }
+}

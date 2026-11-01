@@ -1,0 +1,59 @@
+# 数据与运行时（不随仓库分发）
+database/
+deliveries/
+deliverables/
+exports/
+backups/
+cache/
+logs/
+frames/
+publications/
+registry-history/
+storage-*/
+tests/
+*purrcat*
+*.sqlite3
+*.sqlite3-*
+catalog.json
+review-data.json
+review-lifecycle.json
+candidates.json
+image_candidates.json
+video_candidates.json
+portfolio.json
+events.jsonl
+requests/
+*.log
+start.log
+watchdog.log
+
+# 备份与临时
+*.bak
+*.bak-*
+*.tmp
+*.swp
+*~
+
+# 凭据与环境
+.env
+.env.*
+!.env.example
+credentials/
+*.pem
+*.key
+
+# 依赖与构建产物
+node_modules/
+.pytest_cache/
+__pycache__/
+*.pyc
+bin/
+obj/
+publish/
+publish-single/
+publish-dir/
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini

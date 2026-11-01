@@ -1,0 +1,116 @@
+[
+  {
+    "id": "moss-layout",
+    "port": 3970,
+    "name": "MOSS 布局创作",
+    "desc": "方框与编译稿生图；保存源工程、另存选择路径，历史生图默认折叠。",
+    "kind": "生图",
+    "cmd": "wscript.exe //B //NoLogo E:\\AgentData\\ReviewHub\\generation\\start.vbs",
+    "path": "D:\\2-视频制作\\0-工作流\\MOSS布局管线\\editor\\server.py",
+    "author": "Codex (GPT-6) · 2026-10-24"
+  },
+  {
+    "id": "assets",
+    "port": 3950,
+    "name": "设计资产库 · 待筛选",
+    "desc": "参考图逐张筛选，结果实时保存",
+    "kind": "筛选",
+    "cmd": "node 筛选服务.cjs --port 3950",
+    "path": "D:\\2-视频制作\\0-设计资产库\\02-待筛选\\筛选服务.cjs"
+  },
+  {
+    "id": "review",
+    "port": 3955,
+    "name": "截图标注 · 审阅服务",
+    "desc": "截图并集审阅，自动保存",
+    "kind": "审阅",
+    "cmd": "python 审阅服务.py 3955",
+    "path": "D:\\2-视频制作\\0-临时inbox\\261020-十一人截图标注\\C-中间过程\\审阅服务.py"
+  },
+  {
+    "id": "migrate",
+    "port": 3960,
+    "name": "D 盘迁移筛选台",
+    "desc": "勾选不活跃项目，一键迁移到 E 盘",
+    "kind": "筛选",
+    "cmd": "node 迁移筛选台.cjs --port 3960",
+    "path": "D:\\2-视频制作\\0-临时inbox\\261021-D盘迁移\\迁移筛选台.cjs"
+  },
+  {
+    "id": "portfolio",
+    "port": 3965,
+    "name": "作品集 · 本地预览",
+    "desc": "手工创作、AI 创作、影像作品，三个独立标签页",
+    "kind": "展示",
+    "cmd": "python 本地预览.py 3965",
+    "path": "D:\\2-视频制作\\1-调研与工具\\261020-个人作品站与远程审片\\C-中间过程\\本地预览.py"
+  },
+  {
+    "id": "live2d",
+    "port": 8999,
+    "name": "Live2D · 全角色预览",
+    "desc": "Our Notes 与少女乐团派对；切换角色、服装、动作和表情。",
+    "kind": "预览",
+    "cmd": "wscript.exe //nologo \"E:\\AgentData\\ReviewHub\\live2d.vbs\" 8999",
+    "path": "E:\\AgentData\\ReviewHub\\live2d.py",
+    "author": "Codex 子代理 gbp_existing_inventory（GPT-6） · 2026-10-21"
+  },
+  {
+    "id": "comfy-simple",
+    "port": 3971,
+    "name": "ComfyUI 简易生图 · Krea2",
+    "desc": "Gemini / DeepSeek 扩写，Krea2 与 MOSS；保存源工程、另存路径与耗时记录。",
+    "kind": "生图",
+    "cmd": "wscript.exe //B //NoLogo E:\\AgentData\\ReviewHub\\generation\\start.vbs",
+    "path": "E:\\AgentData\\ReviewHub\\generation\\server.py",
+    "author": "Codex (GPT-6) · 2026-10-24"
+  },
+  {
+    "id": "character-tags",
+    "group": "assets",
+    "port": 3900,
+    "route": "/tags",
+    "name": "角色标签 · 查阅",
+    "desc": "66 部作品、5137 个角色的 danbooru 标签库。搜角色名或特征标签，点标签名即复制。",
+    "kind": "查阅",
+    "cmd": "wscript.exe //nologo E:\\AgentData\\ReviewHub\\silent.vbs hub.cjs 3900",
+    "path": "E:\\AgentData\\ReviewHub\\tags\\index.html",
+    "author": "dsh（DeepSeek-V4.1-Flash） · 2026-10-23"
+  },
+  {
+    "id": "prompt-studio",
+    "group": "creative",
+    "port": 3967,
+    "name": "提示词工作台 · 灵感与创作",
+    "desc": "输入想法，让Agent组合参考与提示词；同屏查阅、离线组合、草稿接续和风格LoRA队列。",
+    "kind": "创作",
+    "cmd": "wscript.exe //B //NoLogo E:\\AgentData\\ReviewHub\\prompt-studio\\start.vbs",
+    "path": "E:\\AgentData\\ReviewHub\\prompt-studio\\server.py",
+    "lifecycle": "permanent",
+    "author": "Codex (GPT-6) · 2026-10-25"
+  },
+  {
+    "id": "character-voice",
+    "group": "creative",
+    "port": 3975,
+    "name": "角色配音 · 文字转语音",
+    "desc": "选角色、输入中文或日文，生成后试听与下载；已有十二位角色。",
+    "kind": "配音",
+    "cmd": "wscript.exe //B //NoLogo E:\\AgentData\\ReviewHub\\voice-workbench\\start.vbs",
+    "path": "E:\\AgentData\\ReviewHub\\voice-workbench\\voice_server.py",
+    "lifecycle": "permanent",
+    "author": "Codex (GPT-6), port conflict repaired 2026-11-01"
+  },
+  {
+    "id": "mobile-workbench",
+    "group": "creative",
+    "port": 3900,
+    "route": "/mobile",
+    "name": "手机工作台 · 生图与Agent",
+    "desc": "手机浏览器打开后可添加到桌面；生图、审阅、任务进度和Agent指令统一进入。",
+    "kind": "创作",
+    "path": "E:/AgentData/ReviewHub/mobile-access/index.html",
+    "author": "Codex (GPT-6), 2026-11-01",
+    "lifecycle": "permanent"
+  }
+]
